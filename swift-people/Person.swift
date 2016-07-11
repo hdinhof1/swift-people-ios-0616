@@ -13,9 +13,13 @@ import Foundation
 class Person {
     let name : String
     var ageInYears : Int?
-    var skills : [String] = []
+    var skills : [String] = [] {
+        didSet {
+            updateQualifications()
+        }
+    }
     var qualifiedTutor : Bool = false
-
+       
     
     convenience init() {
         self.init(name: "John Doe", age: nil)
@@ -45,32 +49,27 @@ class Person {
         if (!skills.contains("bash")) {
             skills.append("bash")
         }
-        updateQualifications()
     }
     
     func learnSkillXcode() {
         if (!skills.contains("Xcode")) {
             skills.append("Xcode")
         }
-        updateQualifications()
     }
     func learnSkillObjectiveC()	{
         if (!skills.contains("Objective-C")) {
             skills.append("Objective-C")
         }
-        updateQualifications()
     }
     func learnSkillSwift()	{
         if (!skills.contains("Swift")) {
             skills.append("Swift")
         }
-        updateQualifications()
     }
     func learnSkillInterfaceBuilder()	{
         if (!skills.contains("Interface Builder")) {
             skills.append("Interface Builder")
         }
-        updateQualifications()
     }
     func isQualified() -> Bool {
         return skills.count >= 4

@@ -18,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         */
         
         // Do not alter
+//        
+//        let person = Person()
+//        person.learnSkillBash()
+//        person.learnSkillXcode()
+//        person.learnSkillObjectiveC()	
+//        person.learnSkillSwift()	
+//        person.learnSkillInterfaceBuilder()
+//        
+//        print ("Person is qualified: \(person.qualifiedTutor)")
         return true  //
     }   //////////////
 }       /////////////
