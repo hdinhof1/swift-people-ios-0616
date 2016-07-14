@@ -7,18 +7,18 @@
 //
 
 import Foundation
-//import Int+Ordinal.swift
 
 
 class Person {
     let name : String
-    var ageInYears : Int?
-    var skills : [String] = [] {
-        didSet {
+    private(set) var ageInYears : Int?
+    //private(set) var skills : [String] = [] {
+    private(set) var skills : Set<String> = [] {
+    didSet {
             updateQualifications()
         }
     }
-    var qualifiedTutor : Bool = false
+    lazy var qualifiedTutor : Bool = false
        
     
     convenience init() {
@@ -46,30 +46,35 @@ class Person {
     }
     
     func learnSkillBash() {
-        if (!skills.contains("bash")) {
-            skills.append("bash")
-        }
+        skills.insert("bash")
+//        if (!skills.contains("bash")) {
+//            skills.append("bash")
+//        }
     }
     
     func learnSkillXcode() {
-        if (!skills.contains("Xcode")) {
-            skills.append("Xcode")
-        }
+        skills.insert("Xcode")
+//        if (!skills.contains("Xcode")) {
+//            skills.append("Xcode")
+//        }
     }
     func learnSkillObjectiveC()	{
-        if (!skills.contains("Objective-C")) {
-            skills.append("Objective-C")
-        }
+        skills.insert("Objective-C")
+//        if (!skills.contains("Objective-C")) {
+//            skills.append("Objective-C")
+//        }
     }
     func learnSkillSwift()	{
-        if (!skills.contains("Swift")) {
-            skills.append("Swift")
-        }
+        skills.insert("Swift")
+//        if (!skills.contains("Swift")) {
+//            skills.append("Swift")
+//        }
     }
     func learnSkillInterfaceBuilder()	{
-        if (!skills.contains("Interface Builder")) {
-            skills.append("Interface Builder")
-        }
+        skills.insert("Interface Builder")
+//        if (!skills.contains("Interface Builder")) {
+//            skills.append("Interface Builder")
+//        }
     }
     func isQualified() -> Bool {
         return skills.count >= 4
